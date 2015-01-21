@@ -1,47 +1,50 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
 public class PokerGame {
-
+	
+	public static String difficulty = "3";
+	
 	public static void main(String[] args) throws InterruptedException, IOException {
 		MainMenu.printTitle();
 		MainMenu.printMenu();
 		MainMenu.menuSelection();
-//		System.out.print("\nNumber of players: ");
-//		Scanner input = new Scanner(System.in);
-//		int playersCount = input.nextInt();
-//		ArrayList<String> playerNames = new ArrayList<String>();
-//		for	(int i = 0; i < playersCount; i++){
-//			System.out.print("\nPlayer "+(i+1)+" name: ");
-//			String playerName = input.next();			
-//			playerNames.add(playerName);
-//		}
-//		System.out.println("\n");
-//		ArrayList<PlayCard> currentDeck = defaultDeck();
-//		ArrayList<ArrayList<PlayCard>> allPlayers = new ArrayList<ArrayList<PlayCard>>();
-//		for (int z = 0; z < playersCount; z++) {
-//			ArrayList<PlayCard> playerCards = new ArrayList<PlayCard>();
-//			System.out.println(playerNames.get(z)+": ");
-//			for (int i = 0; i < 5; i++){
-//				Random random = new Random();
-//				int randomIndex = random.nextInt(currentDeck.size());
-//				PlayCard current = new PlayCard();
-//				current.setRank(currentDeck.get(randomIndex).getRank());
-//				current.setSymbol(currentDeck.get(randomIndex).getSymbol());
-//				current.setSuit(currentDeck.get(randomIndex).getSuit());
-//				playerCards.add(current);
-//				currentDeck.remove(randomIndex);
-//			}
-//			for (PlayCard crd:playerCards){
-//				System.out.print(crd.getSymbol()+""+crd.getSuit()+"\t");
-//				Thread.sleep(450);
-//			}
-//			System.out.println("\n");
-//			allPlayers.add(playerCards);
-//		}
+		System.out.print("\n\tNumber of players: ");
+		Scanner input = new Scanner(System.in);
+		int playersCount = input.nextInt();
+		ArrayList<String> playerNames = new ArrayList<String>();
+		for	(int i = 0; i < playersCount; i++){
+			System.out.print("\n\tPlayer "+(i+1)+" name: ");
+			String playerName = input.next();			
+			playerNames.add(playerName);
+		}
+		System.out.println("\n");
+		ArrayList<PlayCard> currentDeck = defaultDeck();
+		ArrayList<ArrayList<PlayCard>> allPlayers = new ArrayList<ArrayList<PlayCard>>();
+		for (int z = 0; z < playersCount; z++) {
+			ArrayList<PlayCard> playerCards = new ArrayList<PlayCard>();
+			System.out.println(playerNames.get(z)+": ");
+			for (int i = 0; i < 5; i++){
+				Random random = new Random();
+				int randomIndex = random.nextInt(currentDeck.size());
+				PlayCard current = new PlayCard();
+				current.setRank(currentDeck.get(randomIndex).getRank());
+				current.setSymbol(currentDeck.get(randomIndex).getSymbol());
+				current.setSuit(currentDeck.get(randomIndex).getSuit());
+				playerCards.add(current);
+				currentDeck.remove(randomIndex);
+			}
+			for (PlayCard crd:playerCards){
+				System.out.print("\t"+crd.getSymbol()+""+crd.getSuit()+"\t");
+				Thread.sleep(450);
+			}
+			System.out.println("\n");
+			allPlayers.add(playerCards);
+		}
 	}
 	
 	public static ArrayList<PlayCard> defaultDeck() {

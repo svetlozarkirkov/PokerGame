@@ -12,7 +12,7 @@ public class MainMenu {
 			Thread.sleep(70);
 		}
 	}
-	
+		
 	public static void printMenu(){
 		String newGame = "[1] New Game";
 		String difficulty = "[2] Difficulty";
@@ -22,22 +22,28 @@ public class MainMenu {
 		System.out.println("\t"+exit);
 	}
 	
-	public static void menuSelection() throws IOException{
-		System.out.print("\n\tEnter choice: ");
-		int selection = 0;
+	public static void menuSelection() throws IOException, InterruptedException{
+		int tryCount = 0;
+		System.out.print("\n\tEnter selection > ");
 		Scanner input = new Scanner(System.in);
-		try{  
-		      selection=input.nextInt();
-		   }  
-		finally {
-			if (selection != 1 && selection != 2 && selection != 3){
+		String selection = input.nextLine();
+		while (!selection.equals("1") && !selection.equals("2") && !selection.equals("3")) {
+			tryCount++;
+			if (tryCount == 3){
 				System.out.println("\tInvalid selection! Try again...");
+				Thread.sleep(2000);
+				printMenu();
 				menuSelection();
 			}
-			else if (selection == 3 || selection == 2 || selection == 1){
-				//return;
-				System.exit(0);
+			else {
+				System.out.print("\tInvalid selection! Try again...");
+				Thread.sleep(2000);
+				System.out.print("\r\t                               \r\tEnter selection > ");
+				selection = input.nextLine();
 			}
+		}
+		if (selection.equals("2")){
+			Difficulties.selectDifficulty();
 		}
 		
 	}
