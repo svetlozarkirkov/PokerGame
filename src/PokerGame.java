@@ -10,7 +10,7 @@ public class PokerGame {
 	public static String difficulty = "3";
 	
 	public static void main(String[] args) throws InterruptedException, IOException {
-		MainMenu.printTitle();
+		//MainMenu.printTitle();
 		MainMenu.printMenu();
 		MainMenu.menuSelection();
 		System.out.print("\n\tNumber of players: ");
@@ -39,7 +39,7 @@ public class PokerGame {
 				currentDeck.remove(randomIndex);
 			}
 			for (PlayCard crd:playerCards){
-				System.out.print("\t"+crd.getSymbol()+""+crd.getSuit()+"\t");
+				System.out.print(crd.getSymbol()+""+crd.getSuit()+"  ");
 				Thread.sleep(450);
 			}
 			System.out.println("\n");

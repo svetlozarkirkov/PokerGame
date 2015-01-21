@@ -4,9 +4,17 @@ import java.util.Scanner;
 public class Difficulties {
 	
 	public static void selectDifficulty() throws InterruptedException, IOException{
-		System.out.println("\n\tDifficulty select ( current ["+PokerGame.difficulty+"] ): ");
-		System.out.print("\n\t[1] Cheater\t[2] Easy\t[3] Normal\t[4] Back to main menu");
-		System.out.print("\n\n\tSelection > ");
+		System.out.println("\n=============================");
+	    System.out.println("|   	  DIFFICULTY        |");
+	    System.out.println("=============================");
+	    System.out.println("|                           |");
+	    System.out.println("|       [1] Cheater         |");
+	    System.out.println("|       [2] Easy            |");
+	    System.out.println("|       [3] Normal          |");
+	    System.out.println("|       [4] Back to menu    |");
+	    System.out.println("|                           |");
+	    System.out.println("=============================");
+		System.out.print("\n\t Current ["+PokerGame.difficulty+"]\n\n\tSelection > ");
 		int tryCount = 0;
 		Scanner input = new Scanner(System.in);
 		String selectDiff = input.nextLine();
@@ -47,7 +55,7 @@ public class Difficulties {
 	static void cheaterMode() throws InterruptedException, IOException{
 		System.out.print("\n\tcheater mode method");
 		Thread.sleep(4000);
-		System.out.println();
+		System.out.println("\n");
 		MainMenu.printMenu();
 		MainMenu.menuSelection();
 	}
@@ -55,7 +63,7 @@ public class Difficulties {
 	static void easyMode() throws InterruptedException, IOException{
 		System.out.print("\n\teasy mode method");
 		Thread.sleep(4000);
-		System.out.println();
+		System.out.println("\n");
 		MainMenu.printMenu();
 		MainMenu.menuSelection();
 	}
@@ -63,7 +71,7 @@ public class Difficulties {
 	static void normalMode() throws InterruptedException, IOException{
 		System.out.print("\n\tnormal mode method");
 		Thread.sleep(4000);
-		System.out.println();
+		System.out.println("\n");
 		MainMenu.printMenu();
 		MainMenu.menuSelection();
 	}
