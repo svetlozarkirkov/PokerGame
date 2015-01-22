@@ -5,15 +5,25 @@ public class Difficulties {
 	
 	public static void selectDifficulty() throws InterruptedException, IOException{
 		System.out.println("\n=============================");
+		Thread.sleep(20);
 	    System.out.println("|   	  DIFFICULTY        |");
+	    Thread.sleep(20);
 	    System.out.println("=============================");
+	    Thread.sleep(20);
 	    System.out.println("|                           |");
+	    Thread.sleep(20);
 	    System.out.println("|       [1] Cheater         |");
+	    Thread.sleep(20);
 	    System.out.println("|       [2] Easy            |");
+	    Thread.sleep(20);
 	    System.out.println("|       [3] Normal          |");
+	    Thread.sleep(20);
 	    System.out.println("|       [4] Back to menu    |");
+	    Thread.sleep(20);
 	    System.out.println("|                           |");
+	    Thread.sleep(20);
 	    System.out.println("=============================");
+	    Thread.sleep(20);
 		System.out.print("\n\t Current ["+PokerGame.difficulty+"]\n\n\tSelection > ");
 		int tryCount = 0;
 		Scanner input = new Scanner(System.in);

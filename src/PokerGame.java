@@ -25,14 +25,17 @@ public class PokerGame {
 		System.out.println("\n");
 		ArrayList<PlayCard> currentDeck = defaultDeck();
 		ArrayList<ArrayList<PlayCard>> allPlayers = new ArrayList<ArrayList<PlayCard>>();
+		ArrayList<Integer> ranks = new ArrayList<Integer>();
 		for (int z = 0; z < playersCount; z++) {
 			ArrayList<PlayCard> playerCards = new ArrayList<PlayCard>();
+			int totalRank = 0;
 			System.out.println(playerNames.get(z)+": ");
 			for (int i = 0; i < 5; i++){
 				Random random = new Random();
 				int randomIndex = random.nextInt(currentDeck.size());
 				PlayCard current = new PlayCard();
 				current.setRank(currentDeck.get(randomIndex).getRank());
+				totalRank+=currentDeck.get(randomIndex).getRank();
 				current.setSymbol(currentDeck.get(randomIndex).getSymbol());
 				current.setSuit(currentDeck.get(randomIndex).getSuit());
 				playerCards.add(current);
@@ -42,6 +45,7 @@ public class PokerGame {
 				System.out.print(crd.getSymbol()+""+crd.getSuit()+"  ");
 				Thread.sleep(450);
 			}
+			System.out.println("\n\nTotal rank: "+totalRank);
 			System.out.println("\n");
 			allPlayers.add(playerCards);
 		}
@@ -49,7 +53,7 @@ public class PokerGame {
 	
 	public static ArrayList<PlayCard> defaultDeck() {
 		String[] symbols = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
-		String[] suits = {"\u2660","\u2665","\u2666","\u2663"};
+		char[] suits = {'\u2660','\u2665','\u2666','\u2663'};
 		int[] ranks = {1,2,3,4,5,6,7,8,9,10,11,12,13,14};
 		ArrayList<PlayCard> deck = new ArrayList<PlayCard>();
 		for (int i = 0; i < symbols.length;i++){

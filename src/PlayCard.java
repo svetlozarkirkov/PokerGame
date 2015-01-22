@@ -2,7 +2,7 @@
 public class PlayCard {
 	private int rank;
 	private String symbol;
-	private String suit;
+	private char suit;
 	
 	public PlayCard(){
 		
@@ -14,7 +14,7 @@ public class PlayCard {
 	public String getSymbol(){
 		return symbol;
 	}
-	public String getSuit(){
+	public char getSuit(){
 		return suit;
 	}
 	public void setRank(int rank){
@@ -23,7 +23,7 @@ public class PlayCard {
 	public void setSymbol(String symbol){
 		this.symbol = symbol;
 	}
-	public void setSuit(String suit){
+	public void setSuit(char suit){
 		this.suit = suit;
 	}
 }

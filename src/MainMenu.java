@@ -13,16 +13,25 @@ public class MainMenu {
 //		}
 //	}
 		
-	public static void printMenu(){
+	public static void printMenu() throws InterruptedException{
 		System.out.println("=============================");
+		Thread.sleep(20);
 	    System.out.println("|   	   POKER            |");
+	    Thread.sleep(20);
 	    System.out.println("=============================");
+	    Thread.sleep(20);
 	    System.out.println("|                           |");
+	    Thread.sleep(20);
 	    System.out.println("|       [1] New Game        |");
+	    Thread.sleep(20);
 	    System.out.println("|       [2] Difficulty      |");
+	    Thread.sleep(20);
 	    System.out.println("|       [3] Exit            |");
+	    Thread.sleep(20);
 	    System.out.println("|                           |");
+	    Thread.sleep(20);
 	    System.out.println("=============================");
+	    Thread.sleep(20);
 	}
 	
 	public static void menuSelection() throws IOException, InterruptedException{
